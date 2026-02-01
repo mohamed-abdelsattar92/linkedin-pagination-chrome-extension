@@ -1,0 +1,184 @@
+/**
+ * LinkedIn Pagination Extension - Styles
+ * Fixed bottom pagination bar matching LinkedIn's design
+ */
+
+/* Pagination bar container */
+.linkedin-pagination-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+  background: #ffffff;
+  border-top: 1px solid #e0dfdc;
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+  padding: 12px 24px;
+  transform: translateY(100%);
+  transition: transform 0.3s ease-in-out;
+  font-family: -apple-system, system-ui, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+}
+
+.linkedin-pagination-bar.visible {
+  transform: translateY(0);
+}
+
+/* Inner content layout */
+.linkedin-pagination-content {
+  max-width: 1128px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+/* Buttons */
+.linkedin-pagination-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 24px;
+  background: #0a66c2;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease, opacity 0.2s ease, transform 0.1s ease;
+  min-width: 120px;
+  justify-content: center;
+}
+
+.linkedin-pagination-btn:hover:not(:disabled) {
+  background: #004182;
+}
+
+.linkedin-pagination-btn:active:not(:disabled) {
+  transform: scale(0.98);
+}
+
+.linkedin-pagination-btn:disabled,
+.linkedin-pagination-btn.disabled {
+  background: #e0dfdc;
+  color: #666666;
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+.linkedin-pagination-btn svg {
+  flex-shrink: 0;
+}
+
+/* Status text */
+.linkedin-pagination-status {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+}
+
+.linkedin-pagination-range {
+  font-size: 16px;
+  font-weight: 600;
+  color: #191919;
+}
+
+.linkedin-pagination-total {
+  font-size: 12px;
+  color: #666666;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .linkedin-pagination-bar {
+    padding: 10px 16px;
+  }
+
+  .linkedin-pagination-content {
+    gap: 8px;
+  }
+
+  .linkedin-pagination-btn {
+    padding: 8px 12px;
+    min-width: auto;
+    font-size: 13px;
+  }
+
+  .linkedin-pagination-btn span {
+    display: none;
+  }
+
+  .linkedin-pagination-btn svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  .linkedin-pagination-range {
+    font-size: 14px;
+  }
+
+  .linkedin-pagination-total {
+    font-size: 11px;
+  }
+}
+
+/* Dark mode support (LinkedIn uses class on body) */
+@media (prefers-color-scheme: dark) {
+  body.theme--dark .linkedin-pagination-bar,
+  .theme--dark .linkedin-pagination-bar {
+    background: #1d2226;
+    border-top-color: #38434f;
+  }
+
+  body.theme--dark .linkedin-pagination-range,
+  .theme--dark .linkedin-pagination-range {
+    color: #ffffff;
+  }
+
+  body.theme--dark .linkedin-pagination-total,
+  .theme--dark .linkedin-pagination-total {
+    color: #b0b0b0;
+  }
+
+  body.theme--dark .linkedin-pagination-btn:disabled,
+  .theme--dark .linkedin-pagination-btn:disabled {
+    background: #38434f;
+    color: #888888;
+  }
+}
+
+/* Loading state */
+.linkedin-pagination-btn.loading {
+  position: relative;
+  pointer-events: none;
+}
+
+.linkedin-pagination-btn.loading::after {
+  content: '';
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  border: 2px solid transparent;
+  border-top-color: currentColor;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Ensure pagination bar doesn't overlap with LinkedIn's content */
+body.linkedin-pagination-active {
+  padding-bottom: 70px !important;
+}
+
+/* Hide LinkedIn's "Load more" or infinite scroll triggers when pagination is active */
+body.linkedin-pagination-active .scaffold-finite-scroll__load-button,
+body.linkedin-pagination-active .feed-new-update-pill {
+  display: none !important;
+}

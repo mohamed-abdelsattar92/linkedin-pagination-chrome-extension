@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacy Policy - LinkedIn Pagination Extension</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: -apple-system, system-ui, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background: #f9fafb;
+    }
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 40px 20px;
+    }
+    header {
+      text-align: center;
+      margin-bottom: 40px;
+      padding-bottom: 20px;
+      border-bottom: 2px solid #0a66c2;
+    }
+    h1 {
+      color: #0a66c2;
+      font-size: 2rem;
+      margin-bottom: 8px;
+    }
+    .subtitle {
+      color: #666;
+      font-size: 1rem;
+    }
+    .last-updated {
+      color: #888;
+      font-size: 0.875rem;
+      margin-top: 8px;
+    }
+    main {
+      background: #fff;
+      padding: 40px;
+      border-radius: 8px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    }
+    h2 {
+      color: #191919;
+      font-size: 1.25rem;
+      margin-top: 32px;
+      margin-bottom: 12px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid #e5e7eb;
+    }
+    h2:first-of-type {
+      margin-top: 0;
+    }
+    p {
+      margin-bottom: 16px;
+      color: #4b5563;
+    }
+    ul {
+      margin-bottom: 16px;
+      padding-left: 24px;
+    }
+    li {
+      margin-bottom: 8px;
+      color: #4b5563;
+    }
+    strong {
+      color: #191919;
+    }
+    .highlight {
+      background: #f0f9ff;
+      border-left: 4px solid #0a66c2;
+      padding: 16px;
+      margin: 20px 0;
+      border-radius: 0 4px 4px 0;
+    }
+    .highlight p {
+      margin: 0;
+    }
+    footer {
+      text-align: center;
+      margin-top: 40px;
+      padding-top: 20px;
+      color: #888;
+      font-size: 0.875rem;
+    }
+    a {
+      color: #0a66c2;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Privacy Policy</h1>
+      <p class="subtitle">LinkedIn Pagination Chrome Extension</p>
+      <p class="last-updated">Last updated: February 1, 2026</p>
+    </header>
+
+    <main>
+      <h2>Overview</h2>
+      <p>LinkedIn Pagination ("the Extension") is committed to protecting your privacy. This Privacy Policy explains what information we collect, how we use it, and your rights regarding that information.</p>
+
+      <div class="highlight">
+        <p><strong>Summary:</strong> We do NOT collect, store, or transmit any personal data. All your preferences are stored locally on your device using Chrome's built-in storage.</p>
+      </div>
+
+      <h2>Information We Collect</h2>
+      <p>The Extension collects and stores <strong>only the following information locally on your device</strong>:</p>
+      <ul>
+        <li><strong>Enabled/Disabled State:</strong> Whether the pagination feature is turned on or off</li>
+        <li><strong>Posts Per Page Setting:</strong> Your preferred number of posts to display per page (a number between 5-30)</li>
+      </ul>
+      <p>This information is stored using Chrome's <code>chrome.storage.sync</code> API, which means it may sync across your Chrome browsers if you're signed into Chrome, but it never leaves Google's infrastructure and is never sent to us or any third party.</p>
+
+      <h2>Information We Do NOT Collect</h2>
+      <p>We do NOT collect:</p>
+      <ul>
+        <li>Personal information (name, email, etc.)</li>
+        <li>LinkedIn account information or credentials</li>
+        <li>Content you view on LinkedIn (posts, messages, profiles)</li>
+        <li>Browsing history or activity</li>
+        <li>Any analytics or usage data</li>
+        <li>Any data that leaves your device</li>
+      </ul>
+
+      <h2>How the Extension Works</h2>
+      <p>The Extension operates entirely within your browser:</p>
+      <ul>
+        <li>It modifies the visual display of the LinkedIn feed page to show posts in pages rather than infinite scroll</li>
+        <li>It does NOT intercept, read, or store any of your LinkedIn data</li>
+        <li>It does NOT communicate with any external servers</li>
+        <li>It does NOT inject any tracking code</li>
+      </ul>
+
+      <h2>Permissions Explained</h2>
+      <p>The Extension requires the following permissions:</p>
+      <ul>
+        <li><strong>storage:</strong> To save your preferences (enabled state, posts per page) locally using Chrome's storage API</li>
+        <li><strong>Host permission (linkedin.com):</strong> To inject the pagination functionality into LinkedIn pages. This is required to modify the page's appearance and add pagination controls.</li>
+      </ul>
+
+      <h2>Data Sharing</h2>
+      <p>We do NOT share any data with third parties because we do not collect any data. Your preferences stay on your device (or sync via your Google account if Chrome sync is enabled).</p>
+
+      <h2>Data Security</h2>
+      <p>Since all data is stored locally using Chrome's built-in storage mechanisms, your data is protected by Chrome's security measures. We have no access to this data.</p>
+
+      <h2>Children's Privacy</h2>
+      <p>The Extension does not knowingly collect any information from anyone, including children under 13 years of age.</p>
+
+      <h2>Changes to This Policy</h2>
+      <p>We may update this Privacy Policy from time to time. Any changes will be reflected on this page with an updated "Last updated" date. Continued use of the Extension after changes constitutes acceptance of the updated policy.</p>
+
+      <h2>Open Source</h2>
+      <p>This Extension is open source. You can review the complete source code to verify our privacy practices at our <a href="https://github.com/abdelsattar/linkedin-pagination-chrome-extension" target="_blank" rel="noopener">GitHub repository</a>.</p>
+
+      <h2>Contact</h2>
+      <p>If you have any questions about this Privacy Policy or the Extension, please open an issue on our <a href="https://github.com/abdelsattar/linkedin-pagination-chrome-extension/issues" target="_blank" rel="noopener">GitHub repository</a>.</p>
+    </main>
+
+    <footer>
+      <p>LinkedIn Pagination Extension &copy; 2026</p>
+      <p>This extension is not affiliated with or endorsed by LinkedIn.</p>
+    </footer>
+  </div>
+</body>
+</html>

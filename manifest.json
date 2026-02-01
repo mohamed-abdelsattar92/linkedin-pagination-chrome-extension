@@ -1,0 +1,37 @@
+{
+  "manifest_version": 3,
+  "name": "LinkedIn Pagination",
+  "version": "1.0.0",
+  "description": "Turn LinkedIn's infinite scroll into cursor-based pagination to break the doom-scrolling habit",
+  "permissions": ["storage"],
+  "host_permissions": ["https://*.linkedin.com/*"],
+  "action": {
+    "default_popup": "src/popup/popup.html",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://*.linkedin.com/*"],
+      "js": [
+        "src/utils/storage.js",
+        "src/content/feedManager.js",
+        "src/content/paginationUI.js",
+        "src/content/content.js"
+      ],
+      "css": ["src/content/content.css"],
+      "run_at": "document_idle"
+    }
+  ],
+  "background": {
+    "service_worker": "src/background/background.js"
+  }
+}

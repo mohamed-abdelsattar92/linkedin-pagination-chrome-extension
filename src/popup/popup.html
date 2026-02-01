@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LinkedIn Pagination Settings</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="popup-container">
+    <header class="popup-header">
+      <h1>LinkedIn Pagination</h1>
+      <p class="subtitle">Break the doom-scroll habit</p>
+    </header>
+
+    <main class="popup-content">
+      <!-- Enable/Disable Toggle -->
+      <div class="setting-row">
+        <div class="setting-info">
+          <label for="enabled-toggle">Enable Pagination</label>
+          <span class="setting-description">Turn infinite scroll into pages</span>
+        </div>
+        <label class="toggle-switch">
+          <input type="checkbox" id="enabled-toggle" checked>
+          <span class="toggle-slider"></span>
+        </label>
+      </div>
+
+      <!-- Posts Per Page Slider -->
+      <div class="setting-row">
+        <div class="setting-info">
+          <label for="posts-per-page">Posts per Page</label>
+          <span class="setting-description">
+            <span id="posts-value">15</span> posts
+          </span>
+        </div>
+        <input type="range" id="posts-per-page" min="5" max="30" value="15" step="1">
+      </div>
+
+      <!-- Status -->
+      <div class="status-section">
+        <div class="status-indicator" id="status-indicator">
+          <span class="status-dot"></span>
+          <span class="status-text">Active on LinkedIn</span>
+        </div>
+      </div>
+    </main>
+
+    <footer class="popup-footer">
+      <p>Use arrow keys to navigate pages</p>
+    </footer>
+  </div>
+
+  <script src="../utils/storage.js"></script>
+  <script src="popup.js"></script>
+</body>
+</html>
